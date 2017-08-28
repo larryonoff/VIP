@@ -1,1 +1,5 @@
-# VIP
+# VIP (Clean Swift)
+
+This architecture was proposed by [Raymond Law](https://twitter.com/rayvinly) on his [Clean Swift blog](http://clean-swift.com/clean-swift-ios-architecture/). In my opinion, VIP (a.k.a. Clean Swift) can be considered as a variation of VIPER. It gets its name from *View (Controller) – Interactor – Presenter* uni-directional cycle. VIP diverges from *VIPER* but yet it nicely divides responsibilities and propagates data among components. *View Controller* interacts directly with an *Interactor* by sending Requests to it. The *Interactor* responds to those requests by sending a Response with data model to a *Presenter*. The *Presenter* formats data to be displayed, creates a *View Model* and notifies the *View Controller* that it should update its *View* based on the *View Model*. *View Controller* decides when the navigation to a different scene should happen by calling a method on a *Router*. The *Router* performs setup of the next *View Controller* and deals with wiring, passing data and delegation setup. *VIP* components belonging to a single *View Controller* form a scene.
+
+see https://swifting.io/blog/2016/09/07/architecture-wars-a-new-hope/
